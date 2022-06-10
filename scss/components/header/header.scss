@@ -1,0 +1,43 @@
+.header {
+
+  font-family: "Circular Std", sans-serif;
+  font-size: 17px;
+  padding-top: 51px;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header__search {
+    label {
+      display: flex;
+      gap: 15px;
+    }
+
+    input {
+      border: none;
+    }
+
+    input:focus {
+      border: 2px solid #000
+    }
+  }
+
+  .header__nav {
+    ul {
+      display: flex;
+      gap: 42px;
+    }
+  }
+
+  .header__icons {
+    display: flex;
+    gap: 25px;
+
+    a:hover:after {
+      display: none;
+    }
+  }
+}
