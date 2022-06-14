@@ -1,5 +1,157 @@
+@charset "UTF-8";
+/* Указываем box sizing */
+/* Убираем внутренние/внешние отступы */
+/* Выставляем основные настройки по-умолчанию для body */
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+/* Упрощаем работу с изображениями */
+/* Указываем понятную периодичность в потоке данных у article*/
+/* Наследуем шрифты для инпутов и кнопок */
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+* {
+  box-sizing: border-box;
+}
+*::before {
+  box-sizing: border-box;
+}
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+}
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  margin: 0;
+  padding: 0;
+}
+
+h3 {
+  margin: 0;
+  padding: 0;
+}
+
+h4 {
+  margin: 0;
+  padding: 0;
+}
+
+h5 {
+  margin: 0;
+  padding: 0;
+}
+
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  margin: 0;
+  padding: 0;
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+figcaption {
+  margin: 0;
+  padding: 0;
+}
+
+blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+dl {
+  margin: 0;
+  padding: 0;
+}
+
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+article > * + * {
+  margin-top: 1em;
+}
+
+input {
+  font: inherit;
+}
+
+button {
+  font: inherit;
+}
+
+textarea {
+  font: inherit;
+}
+
+select {
+  font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+@font-face {
+  font-family: "Circular Std";
+  src: local("fontsCircular Std Medium"), local("Circular-Std-Medium"), url("../fonts/CircularStd-Medium.woff2") format("woff2"), url("../fonts/CircularStd-Medium.woff") format("woff"), url("../fonts/CircularStd-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
 .container {
-  width: 1250px;
+  max-width: 1250px;
   padding: 0 15px;
   margin: 0 auto;
 }
@@ -16,6 +168,32 @@ a:hover:after {
   border-bottom: 2px solid #000;
 }
 
+/* media */
+@media (max-width: 1280px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+@media (max-width: 1024px) {
+  .container {
+    max-width: 992px;
+  }
+}
+@media (max-width: 992px) {
+  .container {
+    max-width: 767px;
+  }
+}
+@media (max-width: 767px) {
+  .container {
+    max-width: 567px;
+  }
+}
+@media (max-width: 567px) {
+  .container {
+    max-width: 320px;
+  }
+}
 .header {
   font-family: "Circular Std", sans-serif;
   font-size: 17px;
@@ -26,26 +204,72 @@ a:hover:after {
   justify-content: space-between;
   align-items: center;
 }
-.header .header__search label {
+.header aside img {
+  margin-right: 25px;
+}
+.header__search label {
   display: flex;
+  margin-left: 10px;
   gap: 15px;
 }
-.header .header__search input {
+.header__search input {
   border: none;
 }
-.header .header__search input:focus {
+.header__search input:focus {
   border: 2px solid #000;
 }
-.header .header__nav ul {
+.header__nav ul {
   display: flex;
   gap: 42px;
+  margin-right: 20px;
 }
-.header .header__icons {
+.header__icons {
   display: flex;
-  gap: 25px;
+  gap: 10px;
 }
-.header .header__icons a:hover:after {
+.header__icons a:hover:after {
   display: none;
+}
+
+@media (max-width: 992px) {
+  .header__nav ul {
+    gap: 20px;
+  }
+  .header__icons {
+    max-width: 100%;
+    gap: 15px;
+    justify-content: flex-end;
+  }
+}
+@media (max-width: 767px) {
+  .header {
+    font-size: 14px;
+    padding: 50px 0 0;
+  }
+  .header .container {
+    padding: 0;
+    margin: 0 auto;
+  }
+  .header .container aside img {
+    margin-right: 75px;
+  }
+  .header__icons a {
+    width: 24px;
+  }
+}
+@media (max-width: 567px) {
+  .header .container {
+    margin: 0;
+    padding: 0 10px;
+    justify-content: space-between;
+  }
+  .header__nav ul {
+    flex-wrap: wrap;
+    margin-right: 0;
+  }
+  .header__icons {
+    justify-content: flex-end;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

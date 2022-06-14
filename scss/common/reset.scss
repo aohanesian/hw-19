@@ -1,0 +1,127 @@
+/* Указываем box sizing */
+/* Убираем внутренние/внешние отступы */
+/* Выставляем основные настройки по-умолчанию для body */
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+/* Упрощаем работу с изображениями */
+/* Указываем понятную периодичность в потоке данных у article*/
+/* Наследуем шрифты для инпутов и кнопок */
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+* {
+  box-sizing: border-box;
+  &::before {
+    box-sizing: border-box;
+  }
+  &::after {
+    box-sizing: border-box;
+  }
+}
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+a {
+  margin: 0;
+  padding: 0;
+  &:not([class]) {
+    text-decoration-skip-ink: auto;
+  }
+}
+h1 {
+  margin: 0;
+  padding: 0;
+}
+h2 {
+  margin: 0;
+  padding: 0;
+}
+h3 {
+  margin: 0;
+  padding: 0;
+}
+h4 {
+  margin: 0;
+  padding: 0;
+}
+h5 {
+  margin: 0;
+  padding: 0;
+}
+h6 {
+  margin: 0;
+  padding: 0;
+}
+p {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+li {
+  margin: 0;
+  padding: 0;
+}
+figure {
+  margin: 0;
+  padding: 0;
+}
+figcaption {
+  margin: 0;
+  padding: 0;
+}
+blockquote {
+  margin: 0;
+  padding: 0;
+}
+dl {
+  margin: 0;
+  padding: 0;
+}
+dd {
+  margin: 0;
+  padding: 0;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+article {
+  >* {
+    + {
+      * {
+        margin-top: 1em;
+      }
+    }
+  }
+}
+input {
+  font: inherit;
+}
+button {
+  font: inherit;
+}
+textarea {
+  font: inherit;
+}
+select {
+  font: inherit;
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
